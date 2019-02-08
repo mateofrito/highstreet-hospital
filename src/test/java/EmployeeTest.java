@@ -33,35 +33,39 @@ public class EmployeeTest {
 	}
 			
 			
-	@Test
-	
-		public void shouldHaveEmployeeID() {
-		Employee testIDNum = new Employee();
-		
-		String employeeID = "100";
-		
-		String expected = testIDNum.employeeID(employeeID);
-		
-		assertEquals(expected, "100");
-		
-		}
-		
+
 	
 	@Test
 		
-		public void addEmployee() {
+		public void shouldaddEmployee() {
 		
 		HR testTable = new HR();
 		Employee newEmp = new Employee("1", "Matt");
 		
+		int intialEmployees = testTable.getNumofEmployees();
 		testTable.addEmployee(newEmp);
-		Employee didItWork = testTable.getEmployeeID("1");
+		int moreEmployees = testTable.getNumofEmployees();
 		
-		assertEquals(newEmp, didItWork);
-		
-		
+		assertEquals(intialEmployees + 1, moreEmployees);
 		
 		
+	}	
+	@Test
+		public void shouldaddPatient() {
+		
+		Census testTable = new Census();
+		Patient newPat = new Patient("1", "Adam");
+		
+		int intialPatients = testTable.getNumofPatients();
+		testTable.addPatients(newPat);
+		int morePatients = testTable.getNumofPatients();
+		
+		assertEquals(intialPatients + 1, morePatients);
+		
+		
+		
+		}
+	
 		
 		
 		
@@ -77,7 +81,7 @@ public class EmployeeTest {
 	
 		
 		
-	}
+	
 
 	
 	

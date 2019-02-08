@@ -41,7 +41,7 @@ public class Employee {
 		return salary;
 	}
 
-	public String employeeID(String empID) {
+	public String employeeID() {
 
 		return empID;
 	}
