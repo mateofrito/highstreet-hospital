@@ -38,15 +38,43 @@ public class EmployeeTest {
 		public void shouldHaveEmployeeID() {
 		Employee testIDNum = new Employee();
 		
-		String expected = testIDNum.getEmployeeID("100");
+		String employeeID = "100";
+		
+		String expected = testIDNum.employeeID(employeeID);
 		
 		assertEquals(expected, "100");
 		
 		}
 		
 	
-			
+	@Test
 		
+		public void addEmployee() {
+		
+		HR testTable = new HR();
+		Employee newEmp = new Employee("1", "Matt");
+		
+		testTable.addEmployee(newEmp);
+		Employee didItWork = testTable.getEmployeeID("1");
+		
+		assertEquals(newEmp, didItWork);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+		
+	
+	
+	
+	
+	
+	
 		
 		
 	}

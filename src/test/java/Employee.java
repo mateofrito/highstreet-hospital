@@ -41,10 +41,8 @@ public class Employee {
 		return salary;
 	}
 
-	public String getEmployeeID() {
-		
+	public String employeeID(String empID) {
+
 		return empID;
 	}
-
-	
-}
+	}
