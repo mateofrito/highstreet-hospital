@@ -66,11 +66,86 @@ public class EmployeeTest {
 		
 		}
 	
+	@Test
+	
+	public void shouldaddDoctor() {
+		HR testTable = new HR();
 		
+		Employee newEmp = new Doctor("100", "Gary Shandling");
 		
+		int intialEmployees = testTable.getNumofEmployees();
+		testTable.addEmployee(newEmp);
+		int moreEmployees = testTable.getNumofEmployees();
 		
+		assertEquals(intialEmployees + 1, moreEmployees);
 		
+	}
+	
+	
+	@Test
+	public void shouldaddSurgeon() {
+		HR testTable = new HR();
 		
+		Employee newEmp = new Surgeon("100", "Gary Shandling");
+		
+		int intialEmployees = testTable.getNumofEmployees();
+		testTable.addEmployee(newEmp);
+		int moreEmployees = testTable.getNumofEmployees();
+		
+		assertEquals(intialEmployees + 1, moreEmployees);
+	}
+	@Test
+	public void shouldaddNurse() {
+		HR testTable = new HR();
+		
+		Employee newEmp = new Nurse("100", "Gary Shandling");
+		
+		int intialEmployees = testTable.getNumofEmployees();
+		testTable.addEmployee(newEmp);
+		int moreEmployees = testTable.getNumofEmployees();
+		
+		assertEquals(intialEmployees + 1, moreEmployees);
+	}
+		
+	@Test
+	public void shouldaddReceptionist() {
+		HR testTable = new HR();
+		
+		Employee newEmp = new Receptionist("100", "Gary Shandling");
+		
+		int intialEmployees = testTable.getNumofEmployees();
+		testTable.addEmployee(newEmp);
+		int moreEmployees = testTable.getNumofEmployees();
+		
+		assertEquals(intialEmployees + 1, moreEmployees);
+	}	
+		
+	@Test
+	public void shouldaddJanitor() {
+		HR testTable = new HR();
+		
+		Employee newEmp = new Janitor("100", "Gary Shandling");
+		
+		int intialEmployees = testTable.getNumofEmployees();
+		testTable.addEmployee(newEmp);
+		int moreEmployees = testTable.getNumofEmployees();
+		
+		assertEquals(intialEmployees + 1, moreEmployees);
+	}	
+	@Test
+	public void shouldaddVampireJanitor() {
+		HR testTable = new HR();
+		
+		Employee newEmp = new VampireJanitor("100", "Gary Shandling");
+		
+		int intialEmployees = testTable.getNumofEmployees();
+		testTable.addEmployee(newEmp);
+		int moreEmployees = testTable.getNumofEmployees();
+		
+		assertEquals(intialEmployees + 1, moreEmployees);
+	}	
+	
+	
 	}
 		
 	
