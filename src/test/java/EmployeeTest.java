@@ -1,5 +1,7 @@
 import static org.junit.Assert.assertEquals;
 
+import java.util.Scanner;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -206,9 +208,80 @@ public class EmployeeTest {
 		}
 		
 		
+		
 	}
 	
-	
+	@Test
+	public void shouldDrawBlood() {
+		Scanner input = new Scanner(System.in);
+		
+		Census testTable = new Census();
+		HR testHRTable = new HR();
+		
+		testTable.addPatients(new Patient("101", "Sicky McSickerson"));
+		testHRTable.addEmployee(new Janitor("500", "Richard Cranium"));
+		
+		
+		
+		
+		
+		for (Employee employees : testHRTable.getEmployees().values())
+		{
+			String jobTitle = "job";
+			if(employees instanceof Janitor)
+			{ jobTitle = "Janitor       ";
+			
+			}else if (employees instanceof Receptionist)
+			{ jobTitle = "Receptionist   ";
+			}else if (employees instanceof Nurse)
+			{ jobTitle = "Nurse          ";
+			} else if (employees instanceof Surgeon)
+			{ jobTitle = "Surgeon        ";
+			} else if (employees instanceof Doctor)
+			{ jobTitle = "Doctor          ";
+			} else if (employees instanceof VampireJanitor) {
+			  jobTitle = "Vampire Janitor ";
+			}
+			
+			System.out.println(employees.employeeID() + " " + jobTitle + "  " + employees.employeeName() + "   " + employees.getSalary(0));
+			
+			}
+		
+		System.out.println("Enter the ID number of the person drawing blood");
+		
+		String empChoice = input.next();
+		
+		
+		
+		for (Patient patients : testTable.getPatients().values())
+		{
+			System.out.println(patients.patientID() + " " +  patients.patientName());
+		}
+		
+		System.out.println("Enter the Patient ID number for the person get");
+		
+		String patChoice = input.next();
+		
+		Employee empOption = testHRTable.getEmployeeID(empChoice);
+		Patient patOption = testTable.getPatientID(patChoice);
+		
+		System.out.println("current blood level");
+		int bloodlevel = patOption.checkBlood();
+		
+		System.out.println(bloodlevel);
+		
+		empOption.drawBlood(10);
+		patOption.changeBlood(-10);
+		
+		int newBlood = patOption.checkBlood();
+		System.out.println("New Blood Level");
+		System.out.println(newBlood);
+		
+		
+		
+		
+		
+	}
 	
 	
 	

@@ -5,6 +5,7 @@ public class Employee {
 		private String empID;
 		private boolean isWorking;
 		private int salary;
+		private int bloodBank;
 		
 		
 		
@@ -13,6 +14,7 @@ public class Employee {
 		this.empName = empName;
 		this.empID = empID;
 		this.salary = 0;
+		this.bloodBank = 100;
 		
 	}
 
@@ -49,5 +51,15 @@ public class Employee {
 	
 	public String employeeName() {
 		return empName;
+	}
+
+	public int drawBlood(int blooddraw){
+	//	this.bloodBank = bloodBank;
+		this.bloodBank += blooddraw;
+		
+		return bloodBank;
+		
+		// TODO Auto-generated method stub
+		
 	}
 	}
