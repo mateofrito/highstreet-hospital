@@ -212,19 +212,19 @@ public class EmployeeTest {
 		
 	}
 	@Test 
-		public void shouldDrawBloodSimple() {
-		Census testTable = new Census();
+		public void docshouldBloodSimple() {
+		HR testTable = new HR();
 		
-		testTable.addPatients(new Patient("101", "Sicky McSickerson"));
+		testTable.addEmployee(new Doctor("1000","Doctor McDoctorson"));
 		
-		Patient patOption = testTable.getPatientID("100");
-		
-		
-		
-		patOption.changeBlood(10);
+		Employee empOption = testTable.getEmployeeID("1000");
 		
 		
-		int newBlood = patOption.getBloodLevel();
+		
+		empOption.drawBlood(20);
+		
+		
+		int newBlood = empOption.getBloodBank();
 		System.out.println("New Blood Level");
 		System.out.println(newBlood);
 		
@@ -232,7 +232,28 @@ public class EmployeeTest {
 		
 		
 	}
+	//why won't you work?!
+	@Test 
+	public void patientshouldloseBloodSimple() {
+	Census testTable = new Census();
 	
+	testTable.addPatients(new Patient("1000","Sick Guy"));
+	
+	Patient patOption = testTable.getPatientID("1000");
+	
+	
+	
+	patOption.drawBlood(20);
+	
+	
+	int newBlood = patOption.getBloodLevel();
+	System.out.println("New Blood Level");
+	System.out.println(newBlood);
+	
+	
+	
+	
+}
 	
 	
 //	@Test
