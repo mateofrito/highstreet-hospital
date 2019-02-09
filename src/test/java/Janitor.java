@@ -1,7 +1,8 @@
 
 public class Janitor extends Employee {
 
-	public Janitor(String string, String string2) {
+	public Janitor(String empID, String name) {
+		super(empID, name);
 		// TODO Auto-generated constructor stub
 	}
 public int getSalary(int salary) {

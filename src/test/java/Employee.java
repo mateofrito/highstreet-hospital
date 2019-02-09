@@ -46,4 +46,8 @@ public class Employee {
 
 		return empID;
 	}
+	
+	public String employeeName() {
+		return empName;
+	}
 	}

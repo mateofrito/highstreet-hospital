@@ -166,17 +166,17 @@ public class EmployeeTest {
 			
 			}else if (employees instanceof Receptionist)
 			{ jobTitle = "Receptionist   ";
-			}
-			else if (employees instanceof Nurse)
+			}else if (employees instanceof Nurse)
 			{ jobTitle = "Nurse          ";
 			} else if (employees instanceof Surgeon)
 			{ jobTitle = "Surgeon        ";
 			} else if (employees instanceof Doctor)
 			{ jobTitle = "Doctor          ";
 			} else if (employees instanceof VampireJanitor) {
-			 jobTitle = "Vampire Janitor ";
+			  jobTitle = "Vampire Janitor ";
 			}
-			System.out.println(employees.employeeID()+ " " + jobTitle + employees.getSalary(0));
+			
+			System.out.println(employees.employeeID() + " " + jobTitle + "  " + employees.employeeName() + "   " + employees.getSalary(0));
 			
 			
 		
@@ -184,8 +184,29 @@ public class EmployeeTest {
 		
 		
 		
+		
 	}
 	
+	@Test
+	
+	public void shouldListPatients() {
+		Census testTable = new Census();
+		
+		testTable.addPatients(new Patient("101", "Sicky McSickerson"));
+		testTable.addPatients(new Patient("102", "Cancer McCancerson"));
+		
+		for (Patient patients : testTable.getPatients().values())
+		{
+			
+			
+			System.out.println(patients.patientID() + " " +  patients.patientName());
+			
+			
+		
+		}
+		
+		
+	}
 	
 	
 	

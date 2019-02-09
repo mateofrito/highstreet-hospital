@@ -2,6 +2,7 @@
 public class Receptionist extends Employee {
 
 	public Receptionist(String empID, String empName) {
+		super(empID, empName);
 		// TODO Auto-generated constructor stub
 	}
 public int getSalary(int salary) {

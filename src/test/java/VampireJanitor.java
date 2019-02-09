@@ -2,6 +2,8 @@
 public class VampireJanitor extends Employee {
 
 	public VampireJanitor(String empID, String name) {
+		super(empID, name);
+		
 		// TODO Auto-generated constructor stub
 	}
 	
