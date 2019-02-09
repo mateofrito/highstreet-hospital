@@ -31,4 +31,11 @@ public class HR {
 		
 	}
 
+
+
+
+	public HashMap<String, Employee> getEmployees() {
+		return empTable;
+	}
+
 }

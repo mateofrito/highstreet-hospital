@@ -145,6 +145,52 @@ public class EmployeeTest {
 		assertEquals(intialEmployees + 1, moreEmployees);
 	}	
 	
+	@Test
+	public void shouldListEmployeeInformation() {
+		
+		HR testTable = new HR();
+		
+		testTable.addEmployee(new Janitor("500", "Richard Cranium"));
+		testTable.addEmployee(new Receptionist("400", "Tits McGee"));
+		testTable.addEmployee(new Nurse("300", "Alaska Later"));
+		testTable.addEmployee(new Surgeon("200", "Doctor Nick"));
+		testTable.addEmployee(new Doctor("100", "The Doctor"));
+		testTable.addEmployee(new VampireJanitor("666", "Bob Dracula"));
+		
+		
+		for (Employee employees : testTable.getEmployees().values())
+		{
+			String jobTitle = "job";
+			if(employees instanceof Janitor)
+			{ jobTitle = "Janitor       ";
+			
+			}else if (employees instanceof Receptionist)
+			{ jobTitle = "Receptionist   ";
+			}
+			else if (employees instanceof Nurse)
+			{ jobTitle = "Nurse          ";
+			} else if (employees instanceof Surgeon)
+			{ jobTitle = "Surgeon        ";
+			} else if (employees instanceof Doctor)
+			{ jobTitle = "Doctor          ";
+			} else if (employees instanceof VampireJanitor) {
+			 jobTitle = "Vampire Janitor ";
+			}
+			System.out.println(employees.employeeID()+ " " + jobTitle + employees.getSalary(0));
+			
+			
+		
+		}
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
 	
 	}
 		

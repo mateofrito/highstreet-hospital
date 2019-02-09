@@ -9,9 +9,10 @@ public class Employee {
 		
 		
 		
-		
 	public Employee(String empID, String empName) {
-		
+		this.empName = empName;
+		this.empID = empID;
+		this.salary = 0;
 		
 	}
 
