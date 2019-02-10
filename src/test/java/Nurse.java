@@ -11,5 +11,10 @@ public int getSalary(int salary) {
 		rnSalary += salary;
 		return rnSalary;
 	}
+public void feedPatient() {
+	implicateEmployee(-15);
+	// TODO Auto-generated method stub
+	
+}
 	
 }

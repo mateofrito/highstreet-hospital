@@ -1,5 +1,7 @@
 
 public class Janitor extends Employee {
+	
+	
 
 	public Janitor(String empID, String name) {
 		super(empID, name);

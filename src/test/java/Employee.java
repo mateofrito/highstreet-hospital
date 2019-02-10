@@ -3,7 +3,7 @@ public class Employee {
 
 		private String empName;
 		private String empID;
-		private boolean isWorking;
+		private boolean working;
 		private int salary;
 		private int bloodBank;
 		private int implication;
@@ -71,14 +71,17 @@ public Employee() {
 	
 }
 
-public void toggleIsWorking() {
-	isWorking = !isWorking;
+public void toggleWorking() {
+	this.working = !this.working;
 	
 	
 }
 
-public Object IsWorking() {
-	return isWorking;
+public Boolean IsWorking() {
+	return working;
 	
 }
+
+
+
 }
