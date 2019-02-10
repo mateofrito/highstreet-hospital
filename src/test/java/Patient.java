@@ -4,14 +4,14 @@ public class Patient {
 	
 	private String patientName;
 	private String patientID;
-	//private int healthPoints;
+	private int healthPoints;
 	private int bloodLevel;
 
 	
-	public Patient(String patientName, String patientID) {
+	public Patient(String patientID, String patientName) {
 		this.patientName = patientName;
 		this.patientID = patientID;
-		//this.healthPoints = 100;
+		this.healthPoints = 100;
 		this.bloodLevel = 100;
 		
 	}

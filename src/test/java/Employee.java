@@ -6,12 +6,14 @@ public class Employee {
 		private boolean isWorking;
 		private int salary;
 		private int bloodBank;
+		private int implication;
 		
 		public Employee(String empID, String empName) {
 			this.empName = empName;
 			this.empID = empID;
 			this.salary = 0;
 			this.bloodBank = 100;
+			this.implication = 0;
 			
 		}
 		
@@ -33,8 +35,19 @@ public class Employee {
 		this.salary = salary;
 		return salary;
 	}
+	 
+	 public int getImplication() {
+		 
+		 return implication;
+	 }
 
-	
+	 public int implicateEmployee(int implicate) {
+		 this.implication += implicate;
+		 return implicate;
+		 
+		 
+			
+		}
 	
 
 	public int drawBlood(int blooddraw){

@@ -12,5 +12,14 @@ public class Doctor extends Employee {
 		docSalary += salary;
 		return docSalary;
 	}
+	
+	public int getImplication() {
+		int implication =  super.getImplication();
+		 
+		 return implication;
+	 }
+
+
+	
 
 }
