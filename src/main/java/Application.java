@@ -167,6 +167,66 @@ public class Application implements patientInteraction{
 		int actionOption = input.nextInt();
 
 		switch (actionOption) {
+			case 1:
+				System.out.println("Time to draw some blood!");
+				patientCensus(patientCensus);
+				System.out.println("Enter the ID of the patient that you will draw blood from");
+				String bloodVictim = input.next();
+				
+
+				System.out.println("***********High Street Hospital HR Menu************");
+				System.out.println("");
+				System.out.println("ID  Job Title          Name          Implication");
+				for (Employee employees : hospitalRoster.getEmployees().values())
+				{
+					String jobTitle = "job";
+					if(employees instanceof Janitor)
+					{ jobTitle = "Janitor          ";
+					
+					}else if (employees instanceof Receptionist)
+					{ jobTitle = "Receptionist     ";
+					}else if (employees instanceof Nurse)
+					{ jobTitle = "Nurse            ";
+					} else if (employees instanceof Surgeon)
+					{ jobTitle = "Surgeon          ";
+					} else if (employees instanceof Doctor)
+					{ jobTitle = "Doctor           ";
+					} else if (employees instanceof VampireJanitor) {
+					  jobTitle = "Vampire Janitor  ";
+					}
+					
+					if(employees instanceof Doctor || employees instanceof Nurse || employees instanceof VampireJanitor) {
+			
+					System.out.println(employees.employeeID() + " " + jobTitle + "  " + employees.employeeName() + "   " + employees.getImplication());
+					}
+					
+				
+				}
+				System.out.println("***************************************************");
+				
+				
+				
+				System.out.println("Enter ID of who is drawing the blood");
+				String bloodDrawer = input.next();
+				
+				Patient blooddrawn = patientCensus.getPatientID(bloodVictim);
+				Employee bloodtaker = hospitalRoster.getEmployeeID(bloodDrawer);
+				
+				int bloodunits = 10;
+				
+				((DrawBlood)bloodtaker).drawBlood(bloodunits);
+				blooddrawn.drawBlood(bloodunits);
+				
+				System.out.println("***************************************************");
+				System.out.println(bloodtaker.employeeName() + " "  + "blood bank changed to " + bloodtaker.getBloodBank());
+				System.out.println(blooddrawn.patientName() + " " + " blood level changed to " + blooddrawn.getBloodLevel());
+				System.out.println("***************************************************");
+				
+				
+				break;
+				
+				
+			
 			case 3:
 			patientCensus(patientCensus);
 				System.out.println("Enter the ID number of the patient needing treatment.");

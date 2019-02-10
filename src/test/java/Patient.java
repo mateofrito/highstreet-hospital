@@ -59,7 +59,7 @@ public class Patient {
 	
 
 	public int drawBlood(int blooddraw) {
-		this.bloodLevel += blooddraw;
+		this.bloodLevel -= blooddraw;
 		return blooddraw;
 		
 		

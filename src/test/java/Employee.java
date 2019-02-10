@@ -50,13 +50,18 @@ public class Employee {
 		}
 	
 
-	public int drawBlood(int blooddraw){
+	public void drawBlood(int blooddraw){
 		this.bloodBank += blooddraw;
-		return blooddraw;
-	
+		
 		
 		
 		// TODO Auto-generated method stub
+		
+	}
+		
+	public int changeBloodBank(int blood) {
+		this.bloodBank += blood;
+		return blood;
 		
 	}
 	
