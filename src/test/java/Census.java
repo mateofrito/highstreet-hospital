@@ -10,6 +10,9 @@ public class Census {
 	}
 	
 	
+	public HashMap<String, Patient> getPatients(){
+		return patientTable;
+	}
 	
 	public int getNumofPatients() {
 		return patientTable.size();
@@ -20,9 +23,6 @@ public class Census {
 		
 	}
 	
-	public HashMap<String, Patient> getPatients(){
-		return patientTable;
-	}
 
 	
 
