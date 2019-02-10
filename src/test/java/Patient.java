@@ -20,6 +20,10 @@ public class Patient {
 		
 	}
 	
+	public int getHealthPoints() {
+		return healthPoints;
+	}
+	
 	public int getBloodLevel() {
 		return bloodLevel;
 	}
