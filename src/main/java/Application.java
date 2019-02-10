@@ -273,7 +273,101 @@ public class Application implements patientInteraction{
 				
 				
 				break;
-			//close actionOption 5 - feed
+				//end case 5
+			case 6: //on the phones
+				System.out.println("***********High Street Hospital HR Menu************");
+				System.out.println("");
+				System.out.println("ID  Job Title          Name          Implication");
+				for (Employee employees : hospitalRoster.getEmployees().values())
+				{
+					String jobTitle = "job";
+					if(employees instanceof Janitor)
+					{ jobTitle = "Janitor          ";
+					
+					}else if (employees instanceof Receptionist)
+					{ jobTitle = "Receptionist     ";
+					}else if (employees instanceof Nurse)
+					{ jobTitle = "Nurse            ";
+					} else if (employees instanceof Surgeon)
+					{ jobTitle = "Surgeon          ";
+					} else if (employees instanceof Doctor)
+					{ jobTitle = "Doctor           ";
+					} else if (employees instanceof VampireJanitor) {
+					  jobTitle = "Vampire Janitor  ";
+					}
+					
+					if(employees instanceof Receptionist) {
+					System.out.println(employees.employeeID() + " " + jobTitle + "  " + employees.employeeName() + "   " + employees.getImplication());
+					}
+					
+				
+				}
+				System.out.println("***************************************************");
+				System.out.println("Select the ID of the person to be on the phones.");
+				String receptionPhone = input.next();
+				
+				Employee receptionist = hospitalRoster.getEmployeeID(receptionPhone);
+				
+				if (receptionist.IsWorking()) {
+					System.out.println("They are already sweeping the floors");
+				} else {
+					receptionist.toggleWorking();
+				System.out.println("The receptionist is now on the phone!");
+				System.out.println("This will make people think we are a legitimate hosptial.");
+				}
+				
+				
+					
+			break;
+				
+			//close actionOption 6 - feed
+			case 7: 
+				System.out.println("Probably a good idea to take care of the paperwork,");
+				System.out.println("because of the implication...");
+				
+				System.out.println("***********High Street Hospital HR Menu************");
+				System.out.println("");
+				System.out.println("ID  Job Title          Name          Implication");
+				for (Employee employees : hospitalRoster.getEmployees().values())
+				{
+					String jobTitle = "job";
+					if(employees instanceof Janitor)
+					{ jobTitle = "Janitor          ";
+					
+					}else if (employees instanceof Receptionist)
+					{ jobTitle = "Receptionist     ";
+					}else if (employees instanceof Nurse)
+					{ jobTitle = "Nurse            ";
+					} else if (employees instanceof Surgeon)
+					{ jobTitle = "Surgeon          ";
+					} else if (employees instanceof Doctor)
+					{ jobTitle = "Doctor           ";
+					} else if (employees instanceof VampireJanitor) {
+					  jobTitle = "Vampire Janitor  ";
+					}
+					
+					if(employees instanceof Receptionist || employees instanceof Nurse) {
+					System.out.println(employees.employeeID() + " " + jobTitle + "  " + employees.employeeName() + "   " + employees.getImplication());
+					}
+					
+				
+				}
+				System.out.println("***************************************************");
+				System.out.println("Select the ID of the person who needs to 'do paperwork'.");
+				String paperWork = input.next();
+				
+				Employee admin = hospitalRoster.getEmployeeID(paperWork);
+				
+				((Admin)admin).organizePaperWork();
+				
+				System.out.println("***************************************************");
+				System.out.println(admin.employeeName() + " "  + "implication changed to " + admin.getImplication());
+				
+				System.out.println("***************************************************");
+				
+				
+				break;
+				
 			case 8://sweping {
 
 				System.out.println("***********High Street Hospital HR Menu************");

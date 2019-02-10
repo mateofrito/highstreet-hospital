@@ -1,5 +1,5 @@
 
-public class Receptionist extends Employee {
+public class Receptionist extends Employee implements Admin{
 
 	public Receptionist(String empID, String empName) {
 		super(empID, empName);
@@ -11,5 +11,12 @@ public int getSalary(int salary) {
 		receptionSalary += salary;
 		return receptionSalary;
 	}
+
+public void organizePaperWork() {
+	implicateEmployee(-20);
+	
+}
+
+
 
 }
