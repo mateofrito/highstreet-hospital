@@ -20,6 +20,10 @@ public class Patient {
 		
 	}
 	
+	public int getHealthPoints() {
+		return healthPoints;
+	}
+	
 	public int getBloodLevel() {
 		return bloodLevel;
 	}
@@ -31,6 +35,25 @@ public class Patient {
 
 	public String patientName() {
 		return patientName;
+	}
+	public int receiveTreatment() {
+		
+			
+		bloodLevel += 10;
+		healthPoints += 10;
+		return healthPoints;
+		
+		
+		
+		
+		
+		
+	}
+	public int receiveFood() {
+		bloodLevel += 10;
+		healthPoints += 10;
+		return healthPoints;
+		
 	}
 
 	

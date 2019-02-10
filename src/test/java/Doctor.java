@@ -18,6 +18,12 @@ public class Doctor extends Employee {
 		 
 		 return implication;
 	 }
+	
+	public void performTreatment() {
+		implicateEmployee(-10);
+		
+		
+	}
 
 
 	

@@ -14,4 +14,10 @@ public int getSalary(int salary) {
 		return surgeonSalary;
 	}
 
+public void performTreatment() {
+	implicateEmployee(-15);
+	
+	
+}
+
 }

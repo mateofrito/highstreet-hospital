@@ -1,5 +1,5 @@
 
-public class VampireJanitor extends Employee {
+public class VampireJanitor extends Janitor {
 
 	public VampireJanitor(String empID, String name) {
 		super(empID, name);
