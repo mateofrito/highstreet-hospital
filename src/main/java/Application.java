@@ -7,19 +7,28 @@ public class Application implements patientInteraction{
 		Scanner input = new Scanner(System.in);
 		
 		HR hospitalRoster = new HR();
-		hospitalRoster.addEmployee(new Janitor("500", "Richard Cranium"));
-		hospitalRoster.addEmployee(new Receptionist("400", "Tits McGee"));
-		hospitalRoster.addEmployee(new Nurse("300", "Alaska Later"));
-		hospitalRoster.addEmployee(new Surgeon("200", "Doctor Nick"));
-		hospitalRoster.addEmployee(new Doctor("100", "The Doctor"));
-		hospitalRoster.addEmployee(new VampireJanitor("666", "Dennis"));
-		
+		hospitalRoster.addEmployee(new Janitor       ("500", "Richard Cranium "));
+		hospitalRoster.addEmployee(new Receptionist  ("400", "Tits McGee      "));
+		hospitalRoster.addEmployee(new Nurse         ("300", "Alaska Later    "));
+		hospitalRoster.addEmployee(new Surgeon       ("200", "Doctor Nick     "));
+		hospitalRoster.addEmployee(new Doctor        ("100", "The Doctor      "));
+		hospitalRoster.addEmployee(new VampireJanitor("666", "Dennis Reynolds "));
+		hospitalRoster.addEmployee(new Doctor        ("101", "J Peterman      "));
+		hospitalRoster.addEmployee(new Doctor        ("102", "William Wonka   "));
+		hospitalRoster.addEmployee(new Nurse         ("301", "Amanda Steele   "));
+		hospitalRoster.addEmployee(new Nurse         ("302", "Peg Bundy       "));
+		hospitalRoster.addEmployee(new Surgeon       ("201", "Doctor Bob      "));
+		hospitalRoster.addEmployee(new Surgeon       ("202", "Doctor Tom      "));
+		hospitalRoster.addEmployee(new Surgeon       ("203", "Doctor Samantha "));
 		Census patientCensus = new Census();
 		
-		patientCensus.addPatients(new Patient("2000", "Jim Halpert"));
-		patientCensus.addPatients(new Patient("2001", "Pam Halpert"));
-		patientCensus.addPatients(new Patient("2003", "Jack Ryan"));
-		patientCensus.addPatients(new Patient("2004", "Tom Brokaw"));
+		patientCensus.addPatients(new Patient("2000", "Jim Halpert  "));
+		patientCensus.addPatients(new Patient("2001", "Pam Halpert  "));
+		patientCensus.addPatients(new Patient("2003", "Jack Ryan    "));
+		patientCensus.addPatients(new Patient("2004", "Tom Brokaw   "));
+		patientCensus.addPatients(new Patient("2005", "Frank Grimes "));
+		patientCensus.addPatients(new Patient("2006", "Tommy Lasorda"));
+		patientCensus.addPatients(new Patient("2007", "Elaine Bennis"));
 		
         System.out.println("*************************************************");
 		System.out.println("                The Implication                    ");
@@ -107,10 +116,10 @@ public class Application implements patientInteraction{
 	private static void patientCensus(Census patientCensus) {
 		System.out.println("********High Street Hospital Patient Census********");
 		System.out.println(" ");
-		System.out.println(" ID   Name        Blood  Health");
+		System.out.println(" ID   Name           Blood  Health");
 		for (Patient patients : patientCensus.getPatients().values())
 		{
-			System.out.println(patients.patientID() + " " + patients.patientName() + "   " + patients.getBloodLevel() + "   " + patients.getHealthPoints());
+			System.out.println(patients.patientID() + " " + patients.patientName() + "   " + patients.getBloodLevel() + "    " + patients.getHealthPoints());
 		}
 		
 		System.out.println("***************************************************");
@@ -120,7 +129,7 @@ public class Application implements patientInteraction{
 		System.out.println("Here is your Roster");
 		System.out.println("***********High Street Hospital HR Menu************");
 		System.out.println("");
-		System.out.println("ID  Job Title          Name          Salary");
+		System.out.println("ID  Job Title          Name                 Salary");
 		for (Employee employees : hospitalRoster.getEmployees().values())
 		{
 			String jobTitle = "job";
@@ -150,11 +159,13 @@ public class Application implements patientInteraction{
 
 	private static void patientInteraction(Scanner input, HR hospitalRoster, Census patientCensus) {
 		boolean interaction = true;
+		boolean onthePhones = false;
+		
 		while (interaction) {
 		System.out.println("*********************Action Menu******************");
 		System.out.println("              1.  Draw Blood");
 		System.out.println("              2.  Give Blood to Dennis ");
-		System.out.println("              3.  Treat Patients");
+		System.out.println("              3.  View Employee Status");
 		System.out.println("              4.  Perform Surgury");
 		System.out.println("              5.  Feed Patient");
 		System.out.println("              6.  Answer Phone");
@@ -163,8 +174,12 @@ public class Application implements patientInteraction{
 		System.out.println("              10.  Main Menu");
 		System.out.println("*************************************************");
 		
+			
+		
 		System.out.println("Select number of action you wish to complete");
 		int actionOption = input.nextInt();
+		patientCensus.tickAll();
+		
 
 		switch (actionOption) {
 			case 1:
@@ -176,7 +191,7 @@ public class Application implements patientInteraction{
 
 				System.out.println("***********High Street Hospital HR Menu************");
 				System.out.println("");
-				System.out.println("ID  Job Title          Name          Implication");
+				System.out.println("ID  Job Title          Name          Implication   Working?");
 				for (Employee employees : hospitalRoster.getEmployees().values())
 				{
 					String jobTitle = "job";
@@ -197,7 +212,7 @@ public class Application implements patientInteraction{
 					
 					if(employees instanceof Doctor || employees instanceof Nurse || employees instanceof VampireJanitor) {
 			
-					System.out.println(employees.employeeID() + " " + jobTitle + "  " + employees.employeeName() + "   " + employees.getImplication());
+					System.out.println(employees.employeeID() + " " + jobTitle + "  " + employees.employeeName() + "   " + employees.getImplication() + "         " + employees.IsWorking());
 					}
 					
 				
@@ -226,9 +241,39 @@ public class Application implements patientInteraction{
 				break;
 				
 				
+			case 2://employee status
+				System.out.println("***********High Street Hospital HR Menu************");
+				System.out.println("");
+				System.out.println("ID  Job Title          Name          Implication   Working?");
+				for (Employee employees : hospitalRoster.getEmployees().values())
+				{
+					String jobTitle = "job";
+					if(employees instanceof Janitor)
+					{ jobTitle = "Janitor          ";
+					
+					}else if (employees instanceof Receptionist)
+					{ jobTitle = "Receptionist     ";
+					}else if (employees instanceof Nurse)
+					{ jobTitle = "Nurse            ";
+					} else if (employees instanceof Surgeon)
+					{ jobTitle = "Surgeon          ";
+					} else if (employees instanceof Doctor)
+					{ jobTitle = "Doctor           ";
+					} else if (employees instanceof VampireJanitor) {
+					  jobTitle = "Vampire Janitor  ";
+					}
+					
+					if(employees instanceof Doctor || employees instanceof Nurse || employees instanceof VampireJanitor) {
 			
+					System.out.println(employees.employeeID() + " " + jobTitle + "  " + employees.employeeName() + "   " + employees.getImplication() + "         " + employees.IsWorking());
+					}
+					
+				
+				}
+				System.out.println("***************************************************");
+				break;
 			case 3:
-			patientCensus(patientCensus);
+				patientCensus(patientCensus);
 				System.out.println("Enter the ID number of the patient needing treatment.");
 				String patientTreat = input.next();
 				
@@ -277,9 +322,55 @@ public class Application implements patientInteraction{
 				
 				break;
 			//close actionOption 3
+			case 4: //surgury
+				System.out.println("***********High Street Hospital HR Menu************");
+				System.out.println("");
+				System.out.println("ID  Job Title          Name          In OR");
+				for (Employee employees : hospitalRoster.getEmployees().values())
+				{
+					String jobTitle = "job";
+					if(employees instanceof Janitor)
+					{ jobTitle = "Janitor          ";
+					
+					}else if (employees instanceof Receptionist)
+					{ jobTitle = "Receptionist     ";
+					}else if (employees instanceof Nurse)
+					{ jobTitle = "Nurse            ";
+					} else if (employees instanceof Surgeon)
+					{ jobTitle = "Surgeon          ";
+					} else if (employees instanceof Doctor)
+					{ jobTitle = "Doctor           ";
+					} else if (employees instanceof VampireJanitor) {
+					  jobTitle = "Vampire Janitor  ";
+					}
+					
+					if(employees instanceof Surgeon) {
+					System.out.println(employees.employeeID() + " " + jobTitle + "  "+ employees.IsWorking());
+					}
+					
+				
+				}
+				System.out.println("***************************************************");
+				System.out.println("Select the ID of the person to be in the OR.");
+				String surgeonInOR = input.next();
+				
+				Employee surgeon = hospitalRoster.getEmployeeID(surgeonInOR);
+				
+				if (surgeon.IsWorking()) {
+					System.out.println("They are already in the OR.");
+				} else {
+					surgeon.toggleWorking();
+					
+				System.out.println("The Doctor is now in the OR");
+				System.out.println("This will make people think we are a legitimate hosptial.");
+				}
+				
+				
+					
+			break;
 			case 5: //feed option
 
-			patientCensus(patientCensus);
+				patientCensus(patientCensus);
 				System.out.println("Enter the ID number of the patient needing fed.");
 				 patientTreat = input.next();
 				
@@ -369,9 +460,10 @@ public class Application implements patientInteraction{
 				Employee receptionist = hospitalRoster.getEmployeeID(receptionPhone);
 				
 				if (receptionist.IsWorking()) {
-					System.out.println("They are already sweeping the floors");
+					System.out.println("They are already on the phones");
 				} else {
 					receptionist.toggleWorking();
+					onthePhones = true;
 				System.out.println("The receptionist is now on the phone!");
 				System.out.println("This will make people think we are a legitimate hosptial.");
 				}
@@ -463,12 +555,19 @@ public class Application implements patientInteraction{
 				
 				Employee janitor = hospitalRoster.getEmployeeID(janitorSweep);
 				
-				if (janitor.IsWorking()) {
-					System.out.println("He's already sweeping the floors");
-				} else {
-					janitor.toggleWorking();
-				System.out.println("The janitor is now sweeping the floors!");
-				System.out.println("This will make people think we are a legitimate hosptial.");
+				if (janitor instanceof VampireJanitor) {
+					System.out.println("As much as I appreicate you trying to keep up the illusion of a real hospital,");
+					System.out.println("I will not be doing that.");
+					System.out.println("Select a janitor to sweep");
+					janitorSweep = input.next();
+				}else {
+					if (janitor.IsWorking()) {
+						System.out.println("He's already sweeping the floors");
+					} else {
+						janitor.toggleWorking();
+						System.out.println("The janitor is now sweeping the floors!");
+						System.out.println("This will make people think we are a legitimate hosptial.");
+					}
 				}
 				
 				

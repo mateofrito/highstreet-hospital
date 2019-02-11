@@ -16,7 +16,12 @@ public void organizePaperWork() {
 	implicateEmployee(-20);
 	
 }
-
-
-
+public void tick() {
+	implicateEmployee(-5);
+	
 }
+}
+
+
+
+

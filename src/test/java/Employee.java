@@ -1,5 +1,5 @@
 
-public class Employee {
+public abstract class Employee {
 
 		private String empName;
 		private String empID;
@@ -84,6 +84,11 @@ public void toggleWorking() {
 
 public Boolean IsWorking() {
 	return working;
+	
+}
+
+public void tick() {
+	implicateEmployee(-10);
 	
 }
 

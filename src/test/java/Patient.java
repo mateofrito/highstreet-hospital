@@ -61,8 +61,14 @@ public class Patient {
 	public int drawBlood(int blooddraw) {
 		this.bloodLevel -= blooddraw;
 		return blooddraw;
-		
-		
 	}
+		
+	public int tick() {
+		healthPoints -= 1;
+		bloodLevel += 1;
+		return healthPoints;
+	}
+	
+	
 
 }
