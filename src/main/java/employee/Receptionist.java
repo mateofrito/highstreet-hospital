@@ -1,3 +1,4 @@
+package employee;
 
 public class Receptionist extends Employee implements Admin{
 

@@ -1,4 +1,7 @@
+package hospital;
 import java.util.HashMap;
+
+import employee.Employee;
 
 public class HR {
 

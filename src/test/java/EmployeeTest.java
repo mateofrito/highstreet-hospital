@@ -6,6 +6,17 @@ import java.util.Scanner;
 import org.junit.Before;
 import org.junit.Test;
 
+import employee.Doctor;
+import employee.Employee;
+import employee.Janitor;
+import employee.Nurse;
+import employee.Receptionist;
+import employee.Surgeon;
+import employee.VampireJanitor;
+import hospital.Census;
+import hospital.HR;
+import patient.Patient;
+
 public class EmployeeTest {
 	
 	@Before

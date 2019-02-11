@@ -1,3 +1,4 @@
+package employee;
 
 public class Janitor extends Employee {
 	

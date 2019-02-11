@@ -1,4 +1,17 @@
+package hospital;
 import java.util.Scanner;
+
+import employee.Admin;
+import employee.Doctor;
+import employee.DrawBlood;
+import employee.Employee;
+import employee.Janitor;
+import employee.Nurse;
+import employee.Receptionist;
+import employee.Surgeon;
+import employee.VampireJanitor;
+import employee.patientInteraction;
+import patient.Patient;
 
 public class Application implements patientInteraction{
 
@@ -18,7 +31,7 @@ public class Application implements patientInteraction{
 		hospitalRoster.addEmployee(new Nurse         ("301", "Amanda Steele   "));
 		hospitalRoster.addEmployee(new Nurse         ("302", "Peg Bundy       "));
 		hospitalRoster.addEmployee(new Surgeon       ("201", "Doctor Bob      "));
-		hospitalRoster.addEmployee(new Surgeon       ("202", "Doctor Tom      "));
+		hospitalRoster.addEmployee(new Surgeon       ("202", "Mantis Tobogan  "));
 		hospitalRoster.addEmployee(new Surgeon       ("203", "Doctor Samantha "));
 		Census patientCensus = new Census();
 		
@@ -164,8 +177,8 @@ public class Application implements patientInteraction{
 		while (interaction) {
 		System.out.println("*********************Action Menu******************");
 		System.out.println("              1.  Draw Blood");
-		System.out.println("              2.  Give Blood to Dennis ");
-		System.out.println("              3.  View Employee Status");
+		System.out.println("              2.  View employee status");
+		System.out.println("              3.  Perform treatment");
 		System.out.println("              4.  Perform Surgury");
 		System.out.println("              5.  Feed Patient");
 		System.out.println("              6.  Answer Phone");

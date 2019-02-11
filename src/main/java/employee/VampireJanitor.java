@@ -1,3 +1,4 @@
+package employee;
 
 public class VampireJanitor extends Janitor implements DrawBlood{
 
@@ -14,11 +15,11 @@ public int getSalary(int salary) {
 		return vamJanSalary;
 	}
 
-public int drawBlood(int blood) {
+public void drawBlood(int blood) {
 	int bloodBank = super.getBloodBank();
 	bloodBank += blood;
 	
-	return bloodBank;
+	
 	
 	// TODO Auto-generated method stub
 	
