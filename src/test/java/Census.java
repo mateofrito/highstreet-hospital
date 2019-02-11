@@ -23,6 +23,13 @@ public class Census {
 		
 	}
 	
+	public void tickAll() {
+		for (Patient patients : patientTable.values()){
+		
+		patients.tick();
+		}
+	}
+	
 
 	
 

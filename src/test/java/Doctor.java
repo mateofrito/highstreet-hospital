@@ -1,5 +1,5 @@
 
-public class Doctor extends Employee {
+public class Doctor extends Employee implements DrawBlood{
 
 	public Doctor(String empID, String empName) {
 		super(empID, empName);
@@ -22,6 +22,15 @@ public class Doctor extends Employee {
 	public void performTreatment() {
 		implicateEmployee(-10);
 		
+		
+	}
+
+
+	
+	public void drawBlood(int blood) {
+		changeBloodBank(blood);
+		
+		// TODO Auto-generated method stub
 		
 	}
 

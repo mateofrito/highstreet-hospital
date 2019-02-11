@@ -1,5 +1,5 @@
 
-public class VampireJanitor extends Janitor {
+public class VampireJanitor extends Janitor implements DrawBlood{
 
 	public VampireJanitor(String empID, String name) {
 		super(empID, name);
@@ -13,5 +13,20 @@ public int getSalary(int salary) {
 		vamJanSalary += salary;
 		return vamJanSalary;
 	}
+
+public int drawBlood(int blood) {
+	int bloodBank = super.getBloodBank();
+	bloodBank += blood;
+	
+	return bloodBank;
+	
+	// TODO Auto-generated method stub
+	
+}
+
+
+
+
+
 
 }

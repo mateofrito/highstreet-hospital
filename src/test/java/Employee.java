@@ -1,5 +1,5 @@
 
-public class Employee {
+public abstract class Employee {
 
 		private String empName;
 		private String empID;
@@ -50,13 +50,18 @@ public class Employee {
 		}
 	
 
-	public int drawBlood(int blooddraw){
+	public void drawBlood(int blooddraw){
 		this.bloodBank += blooddraw;
-		return blooddraw;
-	
+		
 		
 		
 		// TODO Auto-generated method stub
+		
+	}
+		
+	public int changeBloodBank(int blood) {
+		this.bloodBank += blood;
+		return blood;
 		
 	}
 	
@@ -79,6 +84,11 @@ public void toggleWorking() {
 
 public Boolean IsWorking() {
 	return working;
+	
+}
+
+public void tick() {
+	implicateEmployee(-10);
 	
 }
 
