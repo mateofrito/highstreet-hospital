@@ -1,3 +1,4 @@
+package employee;
 
 public class VampireJanitor extends Janitor implements DrawBlood{
 

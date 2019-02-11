@@ -1,4 +1,4 @@
-
+package employee;
 public class Surgeon extends Doctor {
 
 	public Surgeon(String empID, String empName) {

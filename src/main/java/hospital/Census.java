@@ -1,4 +1,7 @@
+package hospital;
 import java.util.HashMap;
+
+import patient.Patient;
 
 public class Census {
 

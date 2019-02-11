@@ -1,4 +1,17 @@
+package hospital;
 import java.util.Scanner;
+
+import employee.Admin;
+import employee.Doctor;
+import employee.DrawBlood;
+import employee.Employee;
+import employee.Janitor;
+import employee.Nurse;
+import employee.Receptionist;
+import employee.Surgeon;
+import employee.VampireJanitor;
+import employee.patientInteraction;
+import patient.Patient;
 
 public class Application implements patientInteraction{
 
